@@ -1,7 +1,7 @@
 
 def print_hi():
-    for i in range(6):
-        print(i)
+    for i in range(5):
+        print(i+1)
 
 
 # Press the green button in the gutter to run the script.
