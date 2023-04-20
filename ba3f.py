@@ -1,3 +1,5 @@
+#BA3f
+
 import random
 
 def findCycle(d):
@@ -25,6 +27,8 @@ def findCycle(d):
   
   return d, cycle
 
+
+
 def merge(lista1,lista2):
   for i in lista1:
     if i in lista2:
@@ -33,6 +37,8 @@ def merge(lista1,lista2):
       newCycle=lista2[:lista2.index(i)]+reorder1+lista2[lista2.index(i)+1:]
       break
   return newCycle
+
+
 
 def combine(d,sp):
   while(len(sp)>1):
@@ -49,20 +55,24 @@ def combine(d,sp):
             break
   return sp
 
+
+
 def eulerianCycle(lista):
   d=dict()
-  cvalues=0
-  
+  cvalues=0  
   smallerCycles=list()
+
   for l in lista:
     d[l.split(' -> ')[0]]=list(l.split(' -> ')[1].split(','))
     cvalues+=len(d[l.split(' -> ')[0]])
+
   dcopy=d.copy()
+
   while (d!={}):
     dp=findCycle(d)
     d=dp[0]
     smallerCycles.append(dp[1])
-  
+
   if len(smallerCycles)==1:
     return smallerCycles[0]
   else:
@@ -70,11 +80,14 @@ def eulerianCycle(lista):
   return merged
 
 
+
 if __name__=="__main__":
   edges=[]
+
   with open("C:/Users/Y530/Downloads/rosalind_ba3f.txt", "r") as f:
     for line in f.readlines():
         edges.append(line.strip())
+  
   res=eulerianCycle(edges)
   print(*res, sep=' -> ', file=open("output.txt","w"))
   print('done')
