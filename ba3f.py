@@ -89,5 +89,5 @@ if __name__=="__main__":
         edges.append(line.strip())
   
   res=eulerianCycle(edges)
-  print(*res, sep=' -> ', file=open("output.txt","w"))
+  print(*res, sep=' -> ')#, file=open("C:/Users/Y530/Downloads/output.txt","w"))
   print('done')
